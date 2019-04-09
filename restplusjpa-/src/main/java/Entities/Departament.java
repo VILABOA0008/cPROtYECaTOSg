@@ -1,6 +1,6 @@
 package Entities;
 
-import java.util.HashSet;
+import java.util.HashSet; 
 import java.util.Set;
 
 import javax.persistence.Column;

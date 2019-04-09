@@ -2,7 +2,6 @@ package user;
 
 import java.util.List;
 
-
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
@@ -17,44 +16,50 @@ import Entities.Employee;
 
 public class Methods {
   
-  public  List<Departament> listAllDepartaments() {
+final static String EMP="employ";
+  
+  public void asignBoss(int idboss,int id_dep) {    
     
-    EntityManagerFactory emf=Persistence.createEntityManagerFactory("employ");
-    EntityManager em=emf.createEntityManager();     
-       
-    TypedQuery<Departament> query = em.createQuery("SELECT p FROM Departament p", Departament.class);
-    List<Departament> results = query.getResultList();
-
+    //por implementar
+    Employee emp=(Employee)find(idboss, 'e');
+    Departament dep=(Departament)find(id_dep, 'd');
+    dep.setBoss(emp);
+  }
+  
+  
+  
+  public Object find(int id,char t) {
     
+    EntityManagerFactory emf=Persistence.createEntityManagerFactory(EMP);
+    EntityManager em=emf.createEntityManager();    
+    Object o=null;
+    switch(t) {
+    case 'e':   o=em.find(Employee.class,id);break;
+    case 'd':  o=em.find(Departament.class,id);break;    
+    }    
     
-    em.close();
-    emf.close();
-    
-    return results;
+    return o;    
   }
   
   public int createEmployee(String name,int age,float salary) {
     
     Employee emp=new Employee(name,age,salary);    
-    
     Employee aux=(Employee)save(emp); 
     
     return aux.getId();    
   }
   
   
-  public int creaateDepartament(String name) {
-    
+  public int creaateDepartament(String name) {    
     Departament dept=new Departament(name);    
-    
-    Departament aux=(Departament)save(dept); 
+    Departament aux=(Departament)save(dept);
     
     return aux.getId_dep();    
   }
   
   
   public Object  save(Object o) {
-    EntityManagerFactory emf=Persistence.createEntityManagerFactory("employ");
+    EntityManagerFactory emf=Persistence.createEntityManagerFactory(EMP);
     EntityManager em=emf.createEntityManager();    
     
     try {
@@ -75,26 +80,20 @@ public class Methods {
   
   
   public Departament findDepart(int id) {
-    
-    EntityManagerFactory emf=Persistence.createEntityManagerFactory("employ");
-    EntityManager em=emf.createEntityManager();     
-      
-    Departament e=em.find(Departament.class,id);
-    return e;
+    Departament d=(Departament)find(id,'d');
+    return d;
   }
   
   public Employee findEmpl(int id) {
-    
-    EntityManagerFactory emf=Persistence.createEntityManagerFactory("employ");
-    EntityManager em=emf.createEntityManager();     
-      
-    Employee e=em.find(Employee.class,id);
+    Employee e=(Employee)find(id,'e');
     return e;
   }
   
+
+  
   public List<Employee>listallEmployees() {
     
-    EntityManagerFactory emf=Persistence.createEntityManagerFactory("employ");
+    EntityManagerFactory emf=Persistence.createEntityManagerFactory(EMP);
     EntityManager em=emf.createEntityManager();     
        
     TypedQuery<Employee> query = em.createQuery("SELECT p FROM Employee p", Employee.class);
@@ -104,6 +103,21 @@ public class Methods {
     emf.close();
 
     return results;    
+  }
+  
+  
+  public  List<Departament> listAllDepartaments() {
+    
+    EntityManagerFactory emf=Persistence.createEntityManagerFactory(EMP);
+    EntityManager em=emf.createEntityManager();     
+       
+    TypedQuery<Departament> query = em.createQuery("SELECT p FROM Departament p", Departament.class);
+    List<Departament> results = query.getResultList();
+    
+    em.close();
+    emf.close();
+    
+    return results;
   }
 
 }

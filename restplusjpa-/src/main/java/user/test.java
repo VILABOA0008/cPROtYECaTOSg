@@ -22,17 +22,14 @@ public class test {
     
   }
   
-  /**
-   * 
-   */
   public static void testing(){
     
     EntityManagerFactory emf=Persistence.createEntityManagerFactory("employ");
     EntityManager em=emf.createEntityManager(); 
     
     Departament d=em.find(Departament.class,3);
-    Employee e=em.find(Employee.class,88);
-   d.setBoss(e);
+    //Employee e=em.find(Employee.class,88);
+   d.setBoss(null);;
    try {
    em.getTransaction().begin();
    em.persist(d);

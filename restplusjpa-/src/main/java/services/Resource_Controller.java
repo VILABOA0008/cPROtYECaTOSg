@@ -3,7 +3,9 @@ package services;
  
 import java.util.List;
 
+import javax.ws.rs.FormParam;
 import javax.ws.rs.GET;
+import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.QueryParam;
@@ -27,21 +29,21 @@ public class Resource_Controller{
   
     }
     
-    @GET
+    @POST
     @Path("/emp/create")
-    public String createEmployee(@QueryParam("name") String name,@QueryParam("age") 
-            int age,@QueryParam("salary") float salary) {
+    public String createEmployee(@FormParam("name") String name,@FormParam("age") 
+            int age,@FormParam("salary") float salary) {
 
       int id= m.createEmployee(name, age, salary);
-      String output="User "+name+"  whith id  "+id+" has been created";      
+      String output="Employee: "+name+"  whith id  "+id+" has been created";      
       
       return output;
     }
     
     
-    @GET
+    @POST
     @Path("/dept/create")
-    public String createDepartament(@QueryParam("name") String name) {
+    public String createDepartament(@FormParam("name") String name) {
 
       int id= m.creaateDepartament(name);
       String output="Departament "+name+"  whith id  "+id+" has been created";      
@@ -56,8 +58,9 @@ public class Resource_Controller{
       String output="";
       List<Departament> results=m.listAllDepartaments();
       
-      for(Departament emp:results) {
-        output+="Id:"+emp.getId_dep()+"  Name:"+emp.getName();
+      for(Departament dep:results) {
+        output+="\n Id:"+dep.getId_dep()+"  Name:"+dep.getName();
+        if(dep.getBoss()!=null) {output+="  Boss:"+dep.getBoss().getName();}
       }
 
         return output;
@@ -82,7 +85,7 @@ public class Resource_Controller{
     public String finddepartament(@QueryParam("id") int id){
       
       Departament e=m.findDepart(id);
-      String  output="USER \nId:"+e.getId_dep()+"  Name:"+e.getName();
+    String output = "Id:"+e.getId_dep()+"  Name:"+e.getName();
       if (e.getBoss()!=null) {output+="  Boss name:"+e.getBoss().getName();}
           
       return output;
