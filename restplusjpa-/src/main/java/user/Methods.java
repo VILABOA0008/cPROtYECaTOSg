@@ -24,9 +24,24 @@ final static String EMP="employ";
     Employee emp=(Employee)find(idboss, 'e');
     Departament dep=(Departament)find(id_dep, 'd');
     dep.setBoss(emp);
+    
+    save(dep);
   }
   
-  
+  public void asignEmployee(int id_employee,int id_dep) {
+    
+    EntityManagerFactory emf=Persistence.createEntityManagerFactory(EMP);
+    EntityManager em=emf.createEntityManager();    
+
+    Employee emp= em.find(Employee.class,id_employee);
+    Departament dep=  em.find(Departament.class,id_dep);
+    em.getTransaction().begin();
+    dep.getEmployees().add(emp);
+    em.getTransaction().commit();
+
+    dep.getEmployees().forEach(n->System.out.println(n.getId()));
+
+  }
   
   public Object find(int id,char t) {
     
@@ -40,6 +55,7 @@ final static String EMP="employ";
     
     return o;    
   }
+  
   
   public int createEmployee(String name,int age,float salary) {
     
@@ -121,17 +137,3 @@ final static String EMP="employ";
   }
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-

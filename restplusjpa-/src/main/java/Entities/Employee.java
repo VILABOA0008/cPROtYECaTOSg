@@ -1,11 +1,15 @@
 package Entities;
 
 
+import java.util.HashSet;
+import java.util.Set;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
@@ -26,6 +30,8 @@ private float salary;
 @JoinColumn(name = "dept")
 Departament dept;
 
+@ManyToMany(mappedBy="employee")
+private Set<Proyects> proy = new HashSet<Proyects>();
 
 public Employee(String name, int age, float salary) {
   super();
@@ -49,6 +55,12 @@ public void setId(int id) {
 
 
 
+public Set<Proyects> getProy() {
+  return proy;
+}
+public void setProy(Set<Proyects> proy) {
+  this.proy = proy;
+}
 public Departament getDept() {
   return dept;
 }

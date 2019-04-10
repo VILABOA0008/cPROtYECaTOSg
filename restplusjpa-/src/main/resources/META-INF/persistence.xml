@@ -9,6 +9,7 @@
 		<provider>org.hibernate.ejb.HibernatePersistence</provider>
 		<class>Entities.Employee</class>
 		<class>Entities.Departament</class>
+		<class>Entities.Proyects</class>
 		<properties>
 			<property name="hibernate.connection.url" value="jdbc:mysql://localhost/employee" />
 			<property name="hibernate.connection.driver_class" value="com.mysql.jdbc.Driver" />

@@ -28,10 +28,22 @@ public class Departament {
 @OneToMany
 private Set<Employee> employees=new HashSet<>();
 
+@JoinColumn(name = "departament")
+@OneToMany
+private Set<Proyects> proyects=new HashSet<>();
+
 @OneToOne
 @JoinColumn(name = "boss")
 private Employee boss;
   
+
+  public Set<Proyects> getProyects() {
+  return proyects;
+}
+
+public void setProyects(Set<Proyects> proyects) {
+  this.proyects = proyects;
+}
 
   public Departament() {}
   
