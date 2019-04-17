@@ -14,7 +14,7 @@ public class Create {
   public static int createEmployee(String name, int age, float salary,EntityManager em) {
 
     Employee emp = new Employee(name, age, salary);
-    em.persist(emp);;
+    em.persist(emp);
 
     return emp.getId();
   }

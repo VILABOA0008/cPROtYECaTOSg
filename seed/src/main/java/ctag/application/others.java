@@ -15,7 +15,7 @@ import ctag.domain.model.Employee;
 import ctag.domain.model.Proyects;
 
 public class others {
-  final static String EMP = "employ";
+  static final  String  EMP = "employ";
   
   
   public static void projectcosts(int id_pro) {
@@ -60,6 +60,7 @@ public class others {
           .sum()*12));   
   
   em.getTransaction().commit();
+  
   proys.forEach(n->System.out.println(n.getAnual_cost()));
   
 

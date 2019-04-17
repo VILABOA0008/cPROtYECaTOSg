@@ -1,7 +1,6 @@
 package ctag.interfaces.rest;
 
-import java.util.List;
-
+import java.util.List; 
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import javax.ws.rs.GET;
@@ -11,12 +10,10 @@ import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
-
 import org.glassfish.jersey.media.multipart.FormDataParam;
 import org.seedstack.jpa.Jpa;
 import org.seedstack.jpa.JpaUnit;
 import org.seedstack.seed.transaction.Transactional;
-
 import ctag.application.Assign;
 import ctag.application.Create;
 import ctag.application.Lists;
@@ -113,7 +110,7 @@ public class HelloResource {
 
     return "Departament " + name + "  whith id  " + id + " has been created";
   }
-  
+ 
 
 
   @POST
@@ -149,7 +146,7 @@ public class HelloResource {
     String title = "<table style=\"width:100%\" border=\" 1px solid black \"><tr><th>ID</th><th>NAME</th><th>AGE</th><th>SALARY</th>  </tr>";
     for (Employee emp : results) {
       output += "<tr><td>" + emp.getId() + "</td><td>" + emp.getName() + "</td><td>" + emp.getAge()
-          + "</td><td>" + emp.getSalary() + "</td>  </tr>";
+          + "</td><td>" + emp.getSalary() + "</td></tr>";
     }
     return "<html> " + "<title></title>" + "<body><h1>" + title + output
         + "</table></h1></body>" + "</html> ";
