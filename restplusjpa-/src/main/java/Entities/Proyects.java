@@ -24,6 +24,8 @@ public class Proyects {
   @JoinColumn(name="departament")
   private Departament departament;
   
+  @Column(name="anual_cost")
+  private float anual_cost;
 
   @ManyToMany
   @JoinTable(name="empl_proy",joinColumns = {@JoinColumn(name="proy")},
@@ -35,6 +37,9 @@ public class Proyects {
   @JoinColumn(name="director")
   private Employee director;
   
+
+
+
   
   public Proyects(String name, Departament departament) {
     super();
@@ -43,8 +48,9 @@ public class Proyects {
   }
 
 
-  
+
   public Set<Employee> getEmployee() {
+    System.out.println("Ahora ha pasado algo");
     return employee;
   }
 
@@ -98,6 +104,18 @@ public class Proyects {
 
   public void setDirector(Employee director) {
     this.director = director;
+  }
+
+
+
+  public float getAnual_cost() {
+    return anual_cost;
+  }
+
+
+
+  public void setAnual_cost(float anual_cost) {
+    this.anual_cost = anual_cost;
   }
   
   

@@ -5,9 +5,14 @@
     <button formaction="./rest/serv/emp/listall">LIST ALL EMPLOYEES</button>
     <br />
     <p>
-      EMPLOYEE ID <input type="text" name="id">
+    
       <button type="submit" formaction="./rest/serv/emp/findbyid">FIND EMPLOYEE</button>
-    </p>
+            <input type="text" name="id">
+            </p>
+            <br/>
+      <button type="submit" formaction="./rest/serv/emp/findsalary">SALARY BIGGER THAN </button>
+         <input type="text" name="sal">
+
   </form>
 </body>
 </html>

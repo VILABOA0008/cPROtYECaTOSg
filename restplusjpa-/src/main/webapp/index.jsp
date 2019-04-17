@@ -1,10 +1,9 @@
 <html>
 <body>
-  <form action="./employees.jsp" method="get">
-    <button type="submit">EMPLOYEES</button>
-  </form>
-  <form action="./departaments.jsp">
-    <button type="submit">DEPARTAMENTS</button>
+  <form method="get">
+    <button formaction="./employees.jsp" type="submit">EMPLOYEES</button><br/>
+    <button formaction="./departaments.jsp" type="submit">DEPARTAMENTS</button><br/>
+    <button formaction="./proyects.jsp" type="submit">PROYECTS</button>
   </form>
 </body>
 </html>

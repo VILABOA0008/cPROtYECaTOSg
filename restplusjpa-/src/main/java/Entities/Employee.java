@@ -53,8 +53,6 @@ public void setId(int id) {
 }
 
 
-
-
 public Set<Proyects> getProy() {
   return proy;
 }

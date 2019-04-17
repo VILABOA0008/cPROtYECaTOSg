@@ -8,6 +8,7 @@
       DEPARTAMENT ID <input type="text" name="id">
       <button type="submit" formaction="./rest/serv/dep/findbyid">FIND DEPARTAMENT</button>
     </p>
+    <button formaction="./asignToDepartament.jsp" >ASSING</button>
   </form>
 </body>
 </html>
