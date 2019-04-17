@@ -1,0 +1,92 @@
+# Put main configuration in this file
+# See http://seedstack.org/docs/seed/configuration for more information
+
+logging:
+  level: INFO
+
+application:
+  # Unique identifier of the application accross your organization
+  id: library
+  # Make sure all your application base packages are listed below
+  basePackages: [ com.ctag.library ]
+  version: 1.0.1
+
+rest:
+  # The base path of REST resources which will prefix all resource paths
+  path: /api
+  # If true, a JSON-Home resource describing REST entry-points will be served on REST base path
+  jsonHome: true
+  exceptionMapping:
+    # If true, security exceptions are automatically mapped to adequate HTTP responses
+    security: true
+    # If true, all exceptions not already mapped are mapped to a 500 HTTP response
+    all: true
+
+#security:
+  # The security configuration realm uses the 'users' section below (replace it with a more useful realm later)
+  # See http://seedstack.org/docs/seed/manual/security/#realms for more information
+  #realms: ConfigurationRealm
+  #users:
+    # A default 'demo' user is defined with password 'demo'
+    #demo: demo
+  #web:
+    # The 'urls' section below in used to secure HTTP requests
+    # See http://seedstack.org/docs/seed/manual/security/#http-access-control for more information
+    #urls:
+    #   -
+    #     pattern: /api/**
+    #     filters: authcBasic
+
+jdbc:
+  datasources:
+    library-datasource:
+      # The fully qualified class name of the JDBC driver
+      driver: com.mysql.cj.jdbc.Driver
+      # The URL of the datasource
+      url: jdbc:mysql://localhost:3306/Library?useLegacyDatetimeCode=false&serverTimezone=UTC&useSSL=false
+      user: root
+      password: 
+    #main:
+      provider: org.seedstack.jdbc.internal.datasource.PlainDataSourceProvider
+      #url: ${env.DB_URL}
+
+jpa:
+  units:
+    mainLibrary:
+      datasource: library-datasource
+      # The transaction type (local or JTA)
+      transactionType: RESOURCE_LOCAL
+      # Specifies how the provider must use a second-level cache
+      sharedCacheMode: UNSPECIFIED
+      # The validation mode to be used by the provider
+      validationMode: AUTO
+      properties:
+        hibernate.hbm2ddl.auto: validate
+        #hibernate.hbm2ddl.auto: update
+        hibernate.dialect: org.hibernate.dialect.MySQLDialect
+        hibernate.proc.param_null_passing: true
+        hibernate.show_sql: false
+        hibernate.format_sql: false
+        hibernate.use_sql_comments: false
+        hibernate.connection.username: ${jdbc.datasources.library-datasource.user}
+        hibernate.connection.password: ${jdbc.datasources.library-datasource.password}
+  defaultUnit: mainLibrary
+
+classes:
+  com:
+    ctag:
+      library:
+        jpaUnit: mainLibrary
+        defaultRepository: org.seedstack.jpa.Jpa
+
+web:
+  requestDiagnostic: true
+  cors:
+    enabled: true
+    path: '/api/*'
+    properties:
+      allowOrigin: '*'
+      supportedMethods: GET, PUT, POST, DELETE
+
+config:
+  maxBooksForCustomers: 3

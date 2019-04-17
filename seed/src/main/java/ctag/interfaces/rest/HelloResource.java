@@ -70,9 +70,9 @@ public class HelloResource {
     }
     return "<html> " + "<title></title>" + "<body><h1>" + title + output
         + "</table></h1></body>" + "</html> ";
-
   }
 
+  
   @GET
   @Path("pro/listall")
   public String listaAllProy() {

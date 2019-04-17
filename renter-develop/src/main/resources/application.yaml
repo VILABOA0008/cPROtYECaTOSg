@@ -1,0 +1,94 @@
+# Put main configuration in this file
+# See http://seedstack.org/docs/seed/configuration for more information
+
+logging:
+  level: INFO
+
+application:
+  # Unique identifier of the application accross your organization
+  id: renter
+  # Make sure all your application base packages are listed below
+  basePackages: [ org.videofuture.renter ]
+
+
+security:
+  # The security configuration realm uses the 'users' section below (replace it with a more useful realm later)
+  # See http://seedstack.org/docs/seed/manual/security/#realms for more information
+  realms: ConfigurationRealm
+  users:
+    # A default 'demo' user is defined with password 'demo'
+    demo: demo
+  web:
+    # The 'urls' section below in used to secure HTTP requests
+    # See http://seedstack.org/docs/seed/manual/security/#http-access-control for more information
+    urls:
+    #   -
+    #     pattern: /api/**
+    #     filters: authcBasic
+    
+jdbc:
+  datasources:
+    videoclub-datasource:
+      # The fully qualified class name of the JDBC driver
+      driver: com.mysql.cj.jdbc.Driver
+      # The URL of the datasource
+      url: jdbc:mysql://localhost:3306/videoclub?useLegacyDatetimeCode=false&serverTimezone=UTC&useSSL=false
+      user: root
+      password: 
+    #main:
+      provider: org.seedstack.jdbc.internal.datasource.PlainDataSourceProvider
+      #url: ${env.DB_URL}
+    videoclub-hs-datasource:
+      driver: org.hsqldb.jdbcDriver
+      url: jdbc:hsqldb:mem:mydb
+      user: sa
+      password:
+      provider: org.seedstack.jdbc.internal.datasource.PlainDataSourceProvider
+     
+jpa:
+  units:
+    memoryLibrary:       
+      datasource: videoclub-hs-datasource
+      # The transaction type (local or JTA)
+      #transactionType: RESOURCE_LOCAL
+      # Specifies how the provider must use a second-level cache
+      #sharedCacheMode: UNSPECIFIED
+      # The validation mode to be used by the provider
+      #validationMode: AUTO
+      properties:
+        hibernate.hbm2ddl.auto: create-drop
+        hibernate.dialect: org.hibernate.dialect.HSQLDialect
+        #hibernate.proc.param_null_passing: true
+        hibernate.show_sql: true
+        hibernate.format_sql: true
+        #hibernate.use_sql_comments: false
+        hibernate.connection.username: ${jdbc.datasources.videoclub-h2-datasource.user}
+        hibernate.connection.password: ${jdbc.datasources.videoclub-h2-datasource.password}
+    #mainLibrary:
+     ## datasource: videoclub-datasource
+      # The transaction type (local or JTA)
+      #transactionType: RESOURCE_LOCAL
+      # Specifies how the provider must use a second-level cache
+      #sharedCacheMode: UNSPECIFIED
+      # The validation mode to be used by the provider
+      #validationMode: AUTO
+      ##properties:
+       ## hibernate.hbm2ddl.auto: validate
+        #hibernate.hbm2ddl.auto: update
+        ##hibernate.dialect: org.hibernate.dialect.MySQLDialect
+        #hibernate.proc.param_null_passing: true
+        #hibernate.show_sql: false
+        #hibernate.format_sql: false
+        #hibernate.use_sql_comments: false
+       ## hibernate.connection.username: ${jdbc.datasources.videoclub-datasource.user}
+        ##hibernate.connection.password: ${jdbc.datasources.videoclub-datasource.password}
+  defaultUnit: memoryLibrary
+  
+
+
+classes:
+  org:
+    videofuture:
+      renter:
+        jpaUnit: main
+        com.mitchellbosecke.pebble.template.EvaluationContext@1ed80d3: com.mitchellbosecke.pebble.template.PebbleTemplateImpl@1a060f3

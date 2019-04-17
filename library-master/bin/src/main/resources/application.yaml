@@ -1,0 +1,48 @@
+# Put main configuration in this file
+# See http://seedstack.org/docs/seed/configuration for more information
+
+logging:
+  level: INFO
+
+application:
+  # Unique identifier of the application accross your organization
+  id: library
+  # Make sure all your application base packages are listed below
+  basePackages: [ com.ctag.library ]
+
+
+security:
+  # The security configuration realm uses the 'users' section below (replace it with a more useful realm later)
+  # See http://seedstack.org/docs/seed/manual/security/#realms for more information
+  realms: ConfigurationRealm
+  users:
+    # A default 'demo' user is defined with password 'demo'
+    demo: demo
+  web:
+    # The 'urls' section below in used to secure HTTP requests
+    # See http://seedstack.org/docs/seed/manual/security/#http-access-control for more information
+    urls:
+    #   -
+    #     pattern: /api/**
+    #     filters: authcBasic
+
+jdbc:
+  datasources:
+    main:
+      provider: org.seedstack.jdbc.internal.datasource.HikariDataSourceProvider
+      url: jdbc:h2:mem:library
+
+jpa:
+  units:
+    main:
+      datasource: main
+      properties:
+        hibernate.hbm2ddl.auto: update
+        hibernate.dialect: org.hibernate.dialect.H2Dialect
+
+classes:
+  com:
+    ctag:
+      library:
+        jpaUnit: main
+        com.mitchellbosecke.pebble.template.EvaluationContext@53f215: com.mitchellbosecke.pebble.template.PebbleTemplateImpl@163e6ad
