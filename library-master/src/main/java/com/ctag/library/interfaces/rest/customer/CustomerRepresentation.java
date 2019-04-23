@@ -1,6 +1,6 @@
 package com.ctag.library.interfaces.rest.customer;
 
-import org.seedstack.business.assembler.AggregateId;
+import org.seedstack.business.assembler.AggregateId; 
 import org.seedstack.business.assembler.FactoryArgument;
 
 import com.ctag.library.domain.model.book.Book;

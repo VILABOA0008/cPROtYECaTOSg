@@ -1,6 +1,6 @@
 package com.ctag.library.infrastructure.jpa.book;
 
-import java.util.List;
+import java.util.List;  
 
 import javax.persistence.EntityManager;
 import javax.persistence.criteria.CriteriaBuilder;

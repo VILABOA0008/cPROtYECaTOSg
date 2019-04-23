@@ -1,11 +1,12 @@
 package com.ctag.library.domain.model.book;
 
-import javax.persistence.Column;
+import javax.persistence.Column; 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.IdClass;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.persistence.TableGenerator;
 
@@ -30,7 +31,7 @@ public class Book extends BaseAggregateRoot<BookId> {
 
   // TableGenerator
   @TableGenerator(name = "bookGen", table = "SEQUENCE", pkColumnName = "KeyValue", pkColumnValue = TABLE_NAME, valueColumnName = "Value", allocationSize = 1)
-
+  
   // variables
   @Id
   @Column(name = ID_BOOK, unique = true, nullable = false)

@@ -14,6 +14,10 @@ public class BookId extends BaseValueObject {
    * 
    */
   private static final long serialVersionUID = 1L;
+  /**
+   * 
+   */
+
 
   private int idbook;
 

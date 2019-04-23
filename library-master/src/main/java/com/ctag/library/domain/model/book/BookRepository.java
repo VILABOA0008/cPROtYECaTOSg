@@ -1,6 +1,6 @@
 package com.ctag.library.domain.model.book;
 
-import java.util.List;
+import java.util.List; 
 
 import org.seedstack.business.domain.Repository;
 
