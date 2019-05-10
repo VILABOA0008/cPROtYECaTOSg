@@ -6,4 +6,4 @@ Lunes 6 Continuación del proyecto acabando los Agregados, solucionando los erro
 Martes 7 Finalizacion de la creación de los dtos de los assembler y creación de los factory
 Miercoles 8 Creación de los Factory Impl y solucionar un error.
 Jueves 9 Solución de errores crear las primeras insercciones en la base de datos y creación de los metodos get,post y put para el agregado Button.
-Viernes 10 4  Implantacion de sevicios REST, 2 GET 1 POST 1 PUT y añadir las relaciones 
+Viernes 10 Añadir mas metodos http (2 GET 1 POST 1 PUT)para todos las agregados y añadir las relaciones 
