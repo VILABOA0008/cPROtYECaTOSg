@@ -8,4 +8,4 @@ Miercoles 8 Creación de los Factory Impl y solucionar un error.
 Jueves 9 Solución de errores crear las primeras insercciones en la base de datos y creación de los metodos get,post y put para el agregado Button.
 Viernes 10 Añadir mas metodos http (2 GET 1 POST 1 PUT)para todos las agregados y añadir las relaciones 
 
-Martes 14 Leer documentación del Swagger e Implementarlo
+Martes 14 Leer documentación de Swagger y de sus anotaciones e Implementarlo.
