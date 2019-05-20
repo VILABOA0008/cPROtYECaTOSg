@@ -2,11 +2,17 @@ Martes 30  Leer documentación sobre el Metodo optional de java 8, la utilizaci�
 y implementar queries con Specification al proyecto
 Jueves 2 Seguir probando el Specification,  Modularl el proyecti y  Asistir a charla de prevención.
 Viernes 3 Empezar proyecto de Seedstack serio , entender la modulación y empezar a crear los agregados para mapear con la base de datos.
+
 Lunes 6 Continuación del proyecto acabando los Agregados, solucionando los errores para pasar los test de prueba y empezando con los DTOs
 Martes 7 Finalizacion de la creación de los dtos de los assembler y creación de los factory
 Miercoles 8 Creación de los Factory Impl y solucionar un error.
 Jueves 9 Solución de errores crear las primeras insercciones en la base de datos y creación de los metodos get,post y put para el agregado Button.
 Viernes 10 Añadir mas metodos http (2 GET 1 POST 1 PUT)para todos las agregados y añadir las relaciones 
 
-Martes 14 Leer documentación de Swagger y de sus anotaciones e Implementarlo.
-Miercoles 15 na
+
+
+Martes 14 Leer documentación de Swagger y de sus anotaciones e Implementarlo de forma automatica.
+Miercoles 15 Aprender a implementar el swagger de forma manual y organizada
+Jueves 16 continuar con la creacion e implementaicon del swagger
+
+Lunes 20 creacion e implementacion de pagewithbuttons
