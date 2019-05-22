@@ -37,3 +37,77 @@ Permitir ver las graficas semanales mensuales y periodicas.
 (Cambiar colores en la grafica)
 Añadir + imagenes , texto poder modificar el tamaño , poder modificar la posición.
 Permitir donar.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+EJEMPLO DE ANTEPROYECTO
+
+SUFICIENTE EN UNA HOJA.
+
+
+
+ AUTOR Ó AUTORES:
+
+Pablo Vilaboa Costas
+
+
+NOMBRE Y TIPO DE LA APLICACIÓN:
+
+Nombre por definir. Aplicación movil de productividad
+
+
+¿A QUIÉN  VA DIRIGIDO?:
+
+Esta dirigida a los jovenes que quieren dedicar su tiempo en cosas productivas pero 
+que debido a su baja fuerza de voluntad y baja motivación son incapazes por si solos.
+
+
+¿PORQUÉ SE PLANTEA EL DESARROLLO DE LA APLICACIÓN?:
+
+Porque aunque existan ya varias aplicaciones del mismo tipo, no me parece 
+que haya ninguna que te incite de verdad a ser una persona productiva, ya que la mayoria 
+ella solo se enfocan en registrar tu actividad, además tampoco permiten una personalización 
+para los gustos personales del usuario.
+
+
+¿EN QUÉ LENGUAJE SE DESARROLLA?:
+En java con Android Studio
+
+
+
+¿EN QUÉ CONSISTE?:
+
+-Consiste en una aplicación movil donde puedes registar el tiempo que le dedicas
+a hacer cada cosa para asi mostrartelo de forma más clara y bonita en forma de gráficas
+con distinta información y diferentes periodos de tiempo, además se pueden fijar objetivos a 
+cumplir y una activity personalizable a gusto del usuario, donde pueda poner imagenes o textos
+de sus refentes.
+
+
+
+
+
+
+
+
+
+
+
+
+
