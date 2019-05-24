@@ -13,8 +13,10 @@ Viernes 10 Añadir mas metodos http (2 GET 1 POST 1 PUT)para todos las agregados
 
 Martes 14 Leer documentación de Swagger y de sus anotaciones e Implementarlo de forma automatica.
 Miercoles 15 Aprender a implementar el swagger de forma manual y organizada
-Jueves 16 continuar con la creacion e implementaicon del swagger
+Jueves 16 Continuar con la creacion e implementaición del swagger
 
-Lunes 20 creacion e implementacion de pagewithbutton, limpieza do codigo e utilización dos estandars da empresa
-Martes 21 cumplir estandares
-Miercoles 22 acabando de cumplir los estandares , implementacion de services y custom repositories y utilizacion de BaseEntity.
+Lunes 20 Limpieza do codigo y utilización de los estándares da empresa
+Martes 21 Modificar mi codigo para que cumpla los estándares.
+Miercoles 22 Seguir aprendiendo a utilizar los estandares , implementacion de services y custom repositories .
+Jueves 23 Creación e implementación de los Base entity y re-hacer codigo según los estandares.
+Viernes 24 Utilización correcta de los Base Entities y acabar de crear el swagger.
