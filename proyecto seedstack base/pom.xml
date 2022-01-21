@@ -21,7 +21,7 @@
         <logback.version>1.2.3</logback.version>
         <assertj.version>3.12.1</assertj.version>
         <rest-assured.version>3.3.0</rest-assured.version>
-        <h2.version>1.4.196</h2.version>
+        <h2.version>2.1.210</h2.version>
         <mysql.version>8.0.11</mysql.version>
 
         
